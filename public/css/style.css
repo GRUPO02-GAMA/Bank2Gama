@@ -2054,7 +2054,7 @@ figure figcaption {
       background-color: #fff; }
 
 #abraConta {
-  color: white;
+  color: black;
 }
 
 #abraConta:hover {
@@ -2067,7 +2067,7 @@ figure figcaption {
 }
 
 #enviar {
-  color: white;
+  color: black;
 }
 
 #enviar:hover {
