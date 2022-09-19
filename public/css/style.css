@@ -2707,6 +2707,15 @@ figure figcaption {
   color: #f25f1d;
 }
 
+#btnLogin {
+  color: black;
+}
+
+#btnLogin:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  color: #f25f1d;
+}
+
 #dados {
   text-decoration: overline 1px #f25f1d;
 }
@@ -2733,6 +2742,11 @@ figure figcaption {
   transform: translate(10%, -5%);
 }
 
+#formCreate {
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .32); 
+}
+
 #entrar {
   color: black;
 }
@@ -2740,4 +2754,22 @@ figure figcaption {
 #entrar:hover {
   background-color: rgba(255, 255, 255, 0.5);
   color: #f25f1d;
+}
+
+#btnVoltar {
+  color: black;
+}
+
+#btnVoltar:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  color: #f25f1d;
+}
+
+#linkVoltar {
+  display: block;
+  margin-bottom: 18px;
+}
+
+#linkVoltar:hover {
+  color: black;
 }
