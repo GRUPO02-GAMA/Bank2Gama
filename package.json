@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server"
+    "start": "nodemon server",
+    "swagger-autogen": "node swagger.js"
   },
   "repository": {
     "type": "git",
@@ -24,7 +25,10 @@
     "express": "^4.18.1",
     "jsonwebtoken": "^8.5.1",
     "moment": "^2.29.4",
-    "sequelize": "^6.23.0"
+    "npm": "^8.19.2",
+    "sequelize": "^6.23.0",
+    "swagger-autogen": "^2.21.10",
+    "swagger-ui-express": "^4.5.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.19"
