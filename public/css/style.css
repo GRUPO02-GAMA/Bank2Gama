@@ -2773,3 +2773,9 @@ figure figcaption {
 #linkVoltar:hover {
   color: black;
 }
+
+/* ================ Estiliza navbar ================= */
+
+.logo {
+  width: 90px;
+}
