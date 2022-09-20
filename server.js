@@ -2,7 +2,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const routes = require('./src/routes/routes')
 const swaggerUI = require('swagger-ui-express')
-const swaggerFile = require('./swagger_output.json')
+const swaggerFile = require('./swagger.json')
 
 require('dotenv').config()
 
