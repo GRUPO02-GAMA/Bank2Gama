@@ -1,4 +1,9 @@
 /* Base */
+
+:root {
+  --white: #ffffff;
+}
+
 html {
   overflow-x: hidden;
 }
@@ -2772,4 +2777,96 @@ figure figcaption {
 
 #linkVoltar:hover {
   color: black;
+}
+
+/* ================ Estilizando Navbar ================= */
+
+.logo {
+  width: 90px;
+}
+
+.logo-text {
+  font-size: 24px;
+  color: var(--white);
+}
+
+#navbarMenu {
+}
+
+.text-invisible {
+}
+
+.navbar {
+  background-color: #E7582C;
+
+}
+
+.navbar-nav {
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-nav .nav-link {
+  color: var(--white);
+  font-size: 24px;
+}
+
+#firstNavLink{
+  display: flex;
+  align-items: center;
+}
+
+#navbarNavDropdown {
+}
+
+#navbarDropdownMenuLink {
+  border: 1px solid var(--white);
+  padding-left: 32px;
+  padding-right: 32px;
+  border-radius: 32px;
+}
+
+
+/* ================ Estilizando o header na esquerda ================= */
+
+.header {
+  width: 240px;
+  margin-top: 8px;
+  background-color: #E7582C; /* isso deve virar linear gradiente */
+}
+
+.list-group {
+}
+
+.list-group-item {
+  background-color: #E7582C; /* isso deve virar linear gradiente */
+  transition: 0.2s margin-left;
+}
+
+.list-group-item:hover {
+  margin-left: 10px;
+  transition: 0.2s margin-left;
+}
+
+.list-group-item-link {
+  display: flex;
+  align-items: center;
+}
+
+.list-group-item-text {
+  display: block;
+  margin-left: 16px;
+  font-size: 24px;
+  color: var(--white);
+}
+
+span {
+  display: block;
+}
+
+#iconLoan {
+  width: 36px;
+  height: 36px;
+
 }
