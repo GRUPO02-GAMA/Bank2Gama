@@ -17,18 +17,33 @@ exports.create = async function create(req, res) {
     birth: body.birth
   }
 
+  try {
+    const newClient = await Client.create(client)
+
+    try {
+      await createCredentials(newClient)
+    } catch (err) {
+      res.status(400).json({ error: err })
+    }
+
+    res.status(201).json({ msg: 'Conta criada com sucesso' })
+  } catch (err) {
+    res.status(400).json({ error: err })
+  }
+}
+
+async function createCredentials(newClient) {
+  const email = newClient.email
   const salt = await bcrypt.genSalt(10)
-  const password = client.legalId
+  const password = newClient.legalId
   const hash = await bcrypt.hash(password, salt)
 
-  const newClient = await Client.create(client)
-    .then()
-    .catch(error => res.send(error))
-  
-  await Credential.create({
-    email: newClient.toJSON().email,
-    hash: hash
-  })
-    .then(() => res.status(201).json({ msg: 'Conta criada com sucesso' }))
-    .catch(error => res.send(error))
+  try {
+    await Credential.create({
+      email: email,
+      hash: hash
+    })
+  } catch (error) {
+    res.status(400).json({ error: err })
+  }
 }

@@ -1,0 +1,110 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0",
+    "title": "BANK2GAMA",
+    "description": "Documentação da API do banco digital Bank2Gama"
+  },
+  "host": "localhost:3333",
+  "basePath": "/api",
+  "schemes": ["http"],
+  "paths": {
+    "/client": {
+      "get": {
+        "description": "Lista todos os clientes cadastrados",
+        "tags": ["Clientes"],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "legalId": {
+                  "type": "string",
+                  "minLength": 11,
+                  "maxLength": 11,
+                  "example": "31826053646",
+                  "required": true
+                },
+                "name": {
+                  "type": "string",
+                  "maxLength": 50,
+                  "example": "Emily"
+                },
+                "lastname": {
+                  "type": "string",
+                  "maxLength": 50,
+                  "example": "Almeida"
+                },
+                "email": {
+                  "type": "email",
+                  "maxLength": 100,
+                  "example": "emily.almeida@rgsa.com.br"
+                },
+                "birth": {
+                  "type": "date",
+                  "example": "1995-01-20"
+                }
+              }
+            }
+          }
+        ],
+        "tags": ["Clientes"],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/login": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "email": {
+                  "example": "any"
+                },
+                "password": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "tags": ["Login"],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    }
+  }
+}
