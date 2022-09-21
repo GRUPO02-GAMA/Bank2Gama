@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans&display=swap" rel="stylesheet"> 
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="fonts/icomoon/style.css" />
 
-  <link rel="stylesheet" href="css/bootstrap.min.css" />
   <link rel="stylesheet" href="css/jquery-ui.css" />
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
   <link rel="stylesheet" href="css/owl.carousel.min.css" />
   <link rel="stylesheet" href="css/owl.theme.default.min.css" />
   <link rel="stylesheet" href="css/owl.theme.default.min.css" />
@@ -29,66 +30,106 @@
 
   <link rel="stylesheet" href="../public/css/transacoes.css" />
 
-    <title>Transacoes</title>
+  <title>Transacoes</title>
 </head>
+
 <body>
-    <!-- font-family: 'Alegreya Sans', sans-serif; -->
+  <!-- font-family: 'Alegreya Sans', sans-serif; -->
+  <nav class="navbar navbar-expand-sm">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#" id="firstNavLink">
+            <img class="logo" src="images/logo-white.png" alt="">
+            <span class="logo-text">GAMA2BANK</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Conta Digital</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Profile
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Perfil</a>
+            <a class="dropdown-item" href="#">Logout</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
-    <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand" href="#">
-          <img src="../public/images/porco_branco.png" width="30" height="30" class="d-inline-block align-top" alt="logo gama2bank">
-          GAMA2BANK
+  <header class="side-bar">
+    <ul class="list-group">
+      <li class="list-group-item">
+        <a href="" class="list-group-item-link">
+          <img src="images/icon-acoount.svg" alt="">
+          <span class="list-group-item-text">Minha Conta</span>
         </a>
+      </li>
+      <li class="list-group-item">
+        <a href="" class="list-group-item-link">
+          <img src="images/icon-transaction.svg" alt="">
+          <span class="list-group-item-text">Transações</span>
+        </a>
+      </li>
+      <li class="list-group-item">
+        <a href="" class="list-group-item-link">
+          <img src="images/icon-deposit.svg" alt="">
+          <span class="list-group-item-text">Depósito</span>
+        </a>
+      </li>
+      <li class="list-group-item">
+        <a href="" class="list-group-item-link">
+          <img src="images/icon-withdraw.svg" alt="">
+          <span class="list-group-item-text">Sacar</span>
+        </a>
+      </li>
+      <li class="list-group-item">
+        <a href="" class="list-group-item-link">
+          <img src="images/icon-transfer.svg" alt="">
+          <span class="list-group-item-text">Transferência</span>
+          </a>
+      </li>
+      <li class="list-group-item">
+        <a href="" class="list-group-item-link">
+          <img src="images/icon-loan.svg" alt="" id="iconLoan">
+          <span class="list-group-item-text">Empréstimo</span>
+          </a>
+      </li>
+    </ul>
+  </header>
 
-        <h2> Organização </h2>
+  <h1> Extrato </h1>
 
-        <button>
-            Perfil
-        </button>
-      </nav>
-
-      <div id="viewport">
-        <!-- Sidebar -->
-        <div id="sidebar">
-          <ul class="nav">
-            <li>
-              <a href="#">
-                <i class="zmdi zmdi-view-link"></i> Minha Conta
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i class="zmdi zmdi-view-link"></i> Transações
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i class="zmdi zmdi-view-link"></i> Depósito
-              </a>
-            </li>
-            <li>
-                <a href="#">
-                  <i class="zmdi zmdi-view-link"></i> Transfêrencia
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <i class="zmdi zmdi-view-link"></i> Transfêrencia
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <i class="zmdi zmdi-view-link"></i> Transfêrencia
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <i class="zmdi zmdi-view-link"></i> Transfêrencia
-                </a>
-              </li>
-          </ul>
+  <div class="row">
+    <div class="col">
+        <div class="table-responsive-md">
+            <table class="table table-striped" id="agenda">
+                <thead>
+                    <tr>
+                        <th scope="col" value="">#</th>
+                        <th scope="col" value="">Data de criação</th>
+                        <th scope="col" value="">Transações</th>
+                        <th scope="col" class="text-center" value="">Valor</th>
+                      </button></th>
+                    </tr>
+                    <tbody></tbody>
+                </thead>
+            </table>
         </div>
-      </div>
-      
+    </div>
+</div>
+
+  <script src="../public/js/jquery-3.3.1.min.js"></script>
+  <script src="../public/js/bootstrap.min.js"></script>
+
 </body>
+
 </html>
