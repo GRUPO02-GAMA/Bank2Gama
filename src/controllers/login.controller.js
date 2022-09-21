@@ -1,6 +1,6 @@
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
-const moment = require("moment")
+const moment = require('moment')
 require('dotenv').config()
 const Credential = require('../models/credentials.model')
 
@@ -26,11 +26,15 @@ exports.login = async function login(req, res) {
         .then()
         .catch(error => res.send(error))
 
-      res.status(200).json({ token: token })
+      res.status(200).json({ auth: true, token: token })
     } else {
       res.status(400).json({ error: 'Password Incorrect' })
     }
   } else {
     res.status(404).json({ error: 'Client does not exist' })
   }
+}
+
+exports.logout = function logout(req, res) {
+  res.json({ auth: false, token: null })
 }
