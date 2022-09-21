@@ -2833,7 +2833,7 @@ figure figcaption {
 
 /* ================ Estilizando o header na esquerda ================= */
 
-.header {
+.side-bar_menu {
   width: 240px;
   margin-top: 8px;
   background-color: #E7582C; /* isso deve virar linear gradiente */
