@@ -1,8 +1,8 @@
-const express = require("express")
+const express = require('express')
 const routes = express.Router()
 
-const clientsController = require("../controllers/clients.controller")
-const loginController = require("../controllers/login.controller")
+const clientsController = require('../controllers/clients.controller')
+const loginController = require('../controllers/login.controller')
 
 routes.get('/client', clientsController.findAll)
 routes.post('/client', clientsController.create)
