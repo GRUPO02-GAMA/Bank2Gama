@@ -18,7 +18,7 @@ CREATE TABLE `accounts` (
 	`id` int NOT NULL AUTO_INCREMENT,
 	`clientId` int NOT NULL,
 	`type` varchar(8) NOT NULL,
-    `balance` FLOAT NOT NULL,
+  `balance` FLOAT NOT NULL,
 	`active` BOOLEAN NOT NULL DEFAULT true,
 	`createdAt` DATETIME NOT NULL,
 	`updatedAt` DATETIME NOT NULL,
@@ -31,7 +31,7 @@ CREATE TABLE `operations` (
 	`clientId` int NOT NULL,
 	`accountId` int NOT NULL,
 	`type` varchar(7) NOT NULL,
-    `value` FLOAT NOT NULL,
+  `value` FLOAT NOT NULL,
 	`createdAt` DATETIME NOT NULL,
 	`updatedAt` DATETIME NOT NULL,
 	PRIMARY KEY (`id`)
