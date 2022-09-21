@@ -1,10 +1,45 @@
 # Bank2Gama
 
+Site e API desenvolvidas para o banco digital Bank2Gama
+
+## Funcionalidades
+
+### Clientes
+
+- Adição de um novo cliente
+- Listagem de todos os clientes do banco
+- Listagem de um cliente específico
+- Edição de um cliente
+- Exclusão de um cliente (desativação - soft delete)
+
+### Contas
+
+- Adição de uma nova conta
+- Listagem de todas as contas do banco
+- Listagem de uma conta específica
+- Edição de uma conta
+- Exclusão de uma conta (desativação - soft delete)
+
+### Operações
+
+- Adição de saldo através de depósito
+- Débito de saldo através de transferência (PIX)
+- Listagem das operações por cliente (extrato)
+
+### Credenciais
+
+- Criação de usuário e senha
+- Validação de usuário logado
+
 ## Stack utilizada
 
-**Front-end:** HTML5, CSS
+**Front-end:** VueJS, HTML5, CSS
 
-**Back-end:** JavaScript, NodeJS, ExpressJS
+**Back-end:** NodeJS, ExpressJS, JavaScript
+
+**Deploy:** AWS
+
+**Documentação:** Swagger
 
 ## Autores
 
