@@ -2798,16 +2798,13 @@ figure figcaption {
 
 .navbar {
   background-color: #E7582C;
+
 }
 
 .navbar-nav {
   width: 100%;
   justify-content: space-between;
   align-items: center;
-}
-
-.h2 {
-  font-size: 24px;
 }
 
 .navbar-nav .nav-link {
@@ -2862,6 +2859,10 @@ figure figcaption {
   margin-left: 16px;
   font-size: 24px;
   color: var(--white);
+}
+
+span {
+  display: block;
 }
 
 #iconLoan {
