@@ -28,13 +28,13 @@
 
   <link rel="stylesheet" href="css/style.css" />
 
-  <link rel="stylesheet" href="../public/css/transacoes.css" />
+  <link rel="stylesheet" href="/css/transacoes.css" />
 
   <title>Transacoes</title>
 </head>
 
-<body>
-  <!-- font-family: 'Alegreya Sans', sans-serif; -->
+    <body>
+        <div id="_extract">
   <nav class="navbar navbar-expand-sm">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
       aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -120,16 +120,27 @@
                         <th scope="col" class="text-center" value="">Valor</th>
                       </button></th>
                     </tr>
-                    <tbody></tbody>
+                    <tbody>
+                        <tr v-for="(transaction, index) in transactions" :key="index">
+                            <td>{{transaction.createdAt}}</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{transaction.value}}</td>
+                        </tr>
+                    </tbody>
                 </thead>
             </table>
         </div>
     </div>
 </div>
+        </div>
 
-  <script src="../public/js/jquery-3.3.1.min.js"></script>
-  <script src="../public/js/bootstrap.min.js"></script>
+  <script src="/js/jquery-3.3.1.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
 
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.7.10/vue.min.js" integrity="sha512-H8u5mlZT1FD7MRlnUsODppkKyk+VEiCmncej8yZW1k/wUT90OQon0F9DSf/2Qh+7L/5UHd+xTLrMszjHEZc2BA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js" integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/vuejs/operations.js"></script>
 </body>
 
 </html>

@@ -28,13 +28,13 @@
 
   <link rel="stylesheet" href="css/style.css" />
 
-  <link rel="stylesheet" href="../public/css/transacoes.css" />
+  <link rel="stylesheet" href="/css/transacoes.css" />
 
   <title>Transacoes</title>
 </head>
 
 <body>
-  <div class="myContainer">
+  <div id="_profile" class="myContainer">
     <!-- font-family: 'Alegreya Sans', sans-serif; -->
     <nav class="navbar navbar-expand-sm" id="navbar-container">
       <button type="button" class="navbar-toggler">
@@ -123,15 +123,15 @@
             <form class="form-profile">
                 <div class="form-group">
                   <label for="inputName">Nome</label>
-                  <input type="text" class="form-control input-field" id="inputName" placeholder="Digite seu nome">
+                  <input type="text" v-model="form.name" class="form-control input-field" id="inputName" placeholder="Digite seu nome">
                 </div>
                 <div class="form-group">
                   <label for="inputLastname">Sobrenome</label>
-                  <input type="text" class="form-control input-field" id="inputLastname" placeholder="Digite seu sobrenome">
+                  <input type="text" v-model="form.lastname" class="form-control input-field" id="inputLastname" placeholder="Digite seu sobrenome">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">E-mail</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Digite seu email">
+                  <input type="email" v-model="form.email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Digite seu email">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Senha</label>
@@ -147,34 +147,37 @@
             <li class="list-group-item">
                 <div class="profile-fields">
                     <span class="field-name">Nome completo:</span>
-                    <span class="field-value">Jayneanderson Santos</span>
+                    <span class="field-value"> {{ fullname }}</span>
                 </div>
             </li>
             <li class="list-group-item">
                 <div class="profile-fields">
                     <span class="field-name">E-mail:</span>
-                    <span class="field-value">jayneanderson@gmail.com</span>
+                    <span class="field-value">{{ authUser.email }}</span>
                 </div>
             </li>
             <li class="list-group-item">
                 <div class="profile-fields">
                     <span class="field-name">CPF:</span>
-                    <span class="field-value">00011122234</span>
+                    <span class="field-value">{{ authUser.legalId }}</span>
                 </div>
             </li>
             <li class="list-group-item">
                 <div class="profile-fields">
                     <span class="field-name">Data de nascimento:</span>
-                    <span class="field-value">1997-08-03</span>
+                    <span class="field-value">{{ authUser.birth }}</span>
                 </div>
             </li>
           </ul>
       </div>
     </main>
   </div>
-  <script src="../public/js/jquery-3.3.1.min.js"></script>
-  <script src="../public/js/bootstrap.min.js"></script>
-
+  <script src="/js/jquery-3.3.1.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.7.10/vue.min.js" integrity="sha512-H8u5mlZT1FD7MRlnUsODppkKyk+VEiCmncej8yZW1k/wUT90OQon0F9DSf/2Qh+7L/5UHd+xTLrMszjHEZc2BA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.10/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js" integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/js/vuejs/profile.js"></script>
 </body>
 
 </html>
