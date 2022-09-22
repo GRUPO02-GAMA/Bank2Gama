@@ -13,6 +13,8 @@ body {
   color: gray;
   font-weight: 400;
   font-size: 1rem;
+  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
 }
 
 ::-moz-selection {
@@ -2128,13 +2130,22 @@ body:after {
 
 .section-title {
   color: #f25f1d;
-  font-size: 40px;
+/*   font-size: 40px; */
+  font-size: clamp(24px, 40px, 40px);
   font-weight: 900;
 }
 @media (max-width: 991.98px) {
   .section-title {
     font-size: 30px;
   }
+}
+
+.input-login-group {
+  flex-direction: column;
+}
+
+.input-login {
+  width: 80%;
 }
 
 .position-relative {
@@ -2740,16 +2751,50 @@ figure figcaption {
   display: flex;
 }
 
+.login-image-container {
+  width: 50%;
+  height: 100%;
+  position: relative;
+  object-fit: cover;
+}
+
+.login-image-container:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(255deg, #f25f1d, black);
+  z-index: 1;
+  mix-blend-mode: screen;
+}
+
+
+#imgLogin {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+
+
 #login {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding-top: 15%;
   height: 100%;
   background-color: #fff;
-  transform: translate(10%, -5%);
 }
 
 #formCreate {
+  width: 70%;
   border-radius: 8px;
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .32); 
+  background-color: #ffffff;
 }
 
 #entrar {
@@ -2779,6 +2824,11 @@ figure figcaption {
   color: black;
 }
 
+/* ================ Estilizando o container ================= */
+
+.myContainer {
+}
+
 /* ================ Estilizando Navbar ================= */
 
 .logo {
@@ -2788,6 +2838,10 @@ figure figcaption {
 .logo-text {
   font-size: 24px;
   color: var(--white);
+  color: #212529;
+  position: absolute;
+  bottom: -8px;
+  left: -2px;
 }
 
 #navbarMenu {
@@ -2797,7 +2851,7 @@ figure figcaption {
 }
 
 .navbar {
-  background-color: #E7582C;
+  background-color: #f25f1d;
 }
 
 .navbar-nav {
@@ -2818,6 +2872,8 @@ figure figcaption {
 #firstNavLink{
   display: flex;
   align-items: center;
+  position: relative;
+  padding-top: 0;
 }
 
 #navbarNavDropdown {
@@ -2830,21 +2886,39 @@ figure figcaption {
   border-radius: 32px;
 }
 
+.profile .dropdown-item-link {
+  display: flex;
+  align-items: center;
+}
+
+.profile svg {
+  width: 24px;
+  height: 24px;
+}
+
+.profile span {
+  font-size: 24px;
+  margin-left: 10px;
+}
+
 
 /* ================ Estilizando o header na esquerda ================= */
 
-.header {
-  width: 240px;
-  margin-top: 8px;
-  background-color: #E7582C; /* isso deve virar linear gradiente */
+.side-bar_menu {
+  max-width: 300px;
+  background-color: #f25f1d; /* isso deve virar linear gradiente */
 }
 
 .list-group {
 }
 
 .list-group-item {
-  background-color: #E7582C; /* isso deve virar linear gradiente */
+  border-left: none;
+  background-color: #f25f1d; /* isso deve virar linear gradiente */
   transition: 0.2s margin-left;
+}
+
+.list-group-item:first-child {
 }
 
 .list-group-item:hover {
@@ -2868,4 +2942,171 @@ figure figcaption {
   width: 36px;
   height: 36px;
 
+}
+
+/* ================ Estilizando o card ================= */
+
+.main {
+  display: flex;
+  height: 800px;
+}
+
+.group-text {
+  width: 570px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.hello, .last-hour {
+  font-size: 24px;
+  margin-bottom: 00.5rem;
+}
+
+.jumbotron-wrapper {
+  padding: 40px;
+}
+
+.jumbotron {
+  width: 570px;
+  background-color: var(--white);
+  padding: 16px;
+  color: #ffffff;
+  border: 1px solid #f25f1d;
+  border-radius: 16px;
+}
+
+.account {
+  color: rgba(33, 37, 41, 0.8);
+  font-size: 24px;
+}
+
+.container-text {
+  line-height: 1;
+}
+
+.container-text span {
+  font-size: 24px;
+}
+
+.balance-wrapper {
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#balance {
+  line-height: 1.5;
+  font-size: 28px;
+  color: #212529;
+}
+
+#hide {
+  font-size: 24px;
+  color: #F18413;
+}
+
+.money strong {
+  font-size: 40px;
+  color: #F68461;
+}
+
+.my-4 {
+  background-color: rgba(33, 37, 41, 0.3);
+}
+
+.transactions-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.transactions-buttons .btn-primary {
+  width: 160px;
+  border: 1px solid var(--white);
+  font-weight: bold;
+}
+
+.transactions-buttons .btn-primary:hover {
+  background-color: var(--white);
+  color: #f25f1d;
+}
+
+#myTransactions {
+  width: 280px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  box-shadow: 0 20px 80px 0px rgba(246, 132, 97, 0.25);
+  background-color: var(--white);
+  color: rgba(33, 37, 41, 0.8);
+}
+
+#myTransactions:hover {
+  background-color: #f25f1d;
+  color: var(--white);
+}
+
+#myTransactions svg {
+  transition: 0.3s ease;
+  
+}
+
+#myTransactions:hover svg path {
+  stroke: var(--white);
+  transition: 0.3s ease;
+}
+
+#myTransactions:hover svg ellipse {
+  fill: var(--white);
+  transition: 0.3s ease;
+}
+
+#myTransactions span {
+  display: flex;
+  padding-top: 4px;
+  padding-left: 12px;
+}
+
+.logo-bank {
+  display: flex;
+  margin-left: 150px;
+}
+
+.logo-bank img {
+  height: 500px;
+}
+
+
+/* ================ Responsividade ================= */
+
+@media (max-width: 800px) {
+  .login-image-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  #login {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    z-index: 1;
+  }
+
+  #formCreate {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+  }
+
+  .input-login {
+    width: 100%;
+  }
 }
