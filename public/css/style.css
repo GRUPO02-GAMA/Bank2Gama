@@ -2906,15 +2906,15 @@ figure figcaption {
 /* ================ Estilizando o header na esquerda ================= */
 
 .side-bar_menu {
-  background-color: #f25f1d; /* isso deve virar linear gradiente */
 }
 
 .list-group {
   width: 320px;
+  height: 100%;
+  background-color: #f25f1d; /* isso deve virar linear gradiente */
 }
 
 .list-group-item {
-  width: 100%;
   border-left: none;
   background-color: #f25f1d; /* isso deve virar linear gradiente */
   transition: 0.2s margin-left;
@@ -2949,7 +2949,9 @@ figure figcaption {
 /* ================ Estilizando o card ================= */
 
 .main {
-  display: flex;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 320px auto auto;
   height: 800px;
 }
 
