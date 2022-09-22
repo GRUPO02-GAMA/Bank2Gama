@@ -16,9 +16,9 @@ var app = new Vue({
           if (res.data.auth == true) {
             this.form.email = ""
             this.form.password = ""
-            localStorage.clear()
-            localStorage.setItem("token", res.data.token)
-            window.location.href = "account.html"
+            // localStorage.clear()
+            // localStorage.setItem("token", res.data.token)
+            window.location.href = "profile.html"
           }
         })
         .catch((err) => {

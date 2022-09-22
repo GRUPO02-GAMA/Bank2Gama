@@ -2,21 +2,35 @@ var app = new Vue({
   el: "#_profile",
   data() {
     return {
-      user: {},
+      message: "",
+      form: {
+        name: "",
+        lastname: "",
+        email: "",
+        legalId: "",
+        birth: "",
+      },
+      authUser: {},
     }
   },
   computed: {
     fullname() {
-      return this.user.name + " " + this.user.last_name
+      return this.authUser.name + " " + this.authUser.lastname
     },
   },
+  created: function () {
+    this.getUser()
+  },
   methods: {
-    login() {
+    getUser() {
+      console.log("mounted@")
       axios
-        .post("/api/user", this.form)
+        .get("/api/user")
         .then((res) => {
-          this.user = { ...res.data }
-          console.log(this.user)
+          //   console.log(res.data)
+          this.authUser = res.data
+          this.form = res.data
+          //   console.log(this.user)
         })
         .catch((err) => {
           console.log(err)
