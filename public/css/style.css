@@ -2839,9 +2839,6 @@ figure figcaption {
   font-size: 24px;
   color: var(--white);
   color: #212529;
-  position: absolute;
-  bottom: -8px;
-  left: -2px;
 }
 
 #navbarMenu {
@@ -2852,6 +2849,11 @@ figure figcaption {
 
 .navbar {
   background-color: #f25f1d;
+}
+
+#navbar-container {
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .navbar-nav {
@@ -2872,8 +2874,7 @@ figure figcaption {
 #firstNavLink{
   display: flex;
   align-items: center;
-  position: relative;
-  padding-top: 0;
+  padding: 0;
 }
 
 #navbarNavDropdown {
@@ -2905,14 +2906,15 @@ figure figcaption {
 /* ================ Estilizando o header na esquerda ================= */
 
 .side-bar_menu {
-  max-width: 300px;
   background-color: #f25f1d; /* isso deve virar linear gradiente */
 }
 
 .list-group {
+  width: 320px;
 }
 
 .list-group-item {
+  width: 100%;
   border-left: none;
   background-color: #f25f1d; /* isso deve virar linear gradiente */
   transition: 0.2s margin-left;
@@ -2921,8 +2923,8 @@ figure figcaption {
 .list-group-item:first-child {
 }
 
-.list-group-item:hover {
-  margin-left: 10px;
+.list-group-item:hover .list-group-item-link {
+  margin-left: 16px;
   transition: 0.2s margin-left;
 }
 
