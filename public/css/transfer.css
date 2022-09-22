@@ -19,3 +19,17 @@
 #accountTo {
     font-size: 24px;
 }
+
+#transferLink {
+    color: #ffffff;
+}
+
+#transferCancel {
+    background-color: #ffffff;
+    color: #212529;
+}
+
+#transferCancel:hover {
+    background-color: #212529;
+    color: #ffffff;
+}

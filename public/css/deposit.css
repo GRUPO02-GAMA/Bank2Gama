@@ -165,7 +165,15 @@
     justify-content: space-around;
     padding: 10px 20px;
     border-radius: 12px;
-}   
+}
+
+.resume-ok:hover {
+    cursor: pointer;
+}
+
+.resume-ok span {
+    color: #ffffff;
+}
 
 .resume-ok svg path, 
 .resume-ok svg circle {
@@ -181,6 +189,22 @@
     margin-left: 12px;
 }
 
+#depositButton, #cancel {
+    width: 111px;
+    height: 45.4px;
+    padding: 0;
+}
+
+#depositSend {
+    color: #ffffff;
+}
+
+#depositSend, #cancelLink {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 /* ================ Responsividade ================= */
 

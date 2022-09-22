@@ -3036,6 +3036,11 @@ figure figcaption {
   color: #f25f1d;
 }
 
+.transactions-buttons .btn-primary.operation-link:hover {
+  color: black !important;
+  cursor: pointer;
+}
+
 #myTransactions {
   width: 280px;
   height: 50px;
