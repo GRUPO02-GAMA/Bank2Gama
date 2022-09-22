@@ -1,6 +1,7 @@
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const moment = require('moment')
+const cookieParser = require('cookie-parser')
 require('dotenv').config()
 const Credential = require('../models/credentials.model')
 
@@ -10,9 +11,10 @@ exports.login = async function login(req, res) {
   if (client) {
     const password_valid = await bcrypt.compare(req.body.password, client.hash)
     if (password_valid) {
-      token = jwt.sign(
+      const token = jwt.sign(
         { id: client.id, email: client.email },
-        process.env.SECRET
+        process.env.SECRET,
+        { expiresIn: 86400 }
       )
 
       await Credential.update(
@@ -26,6 +28,7 @@ exports.login = async function login(req, res) {
         .then()
         .catch(error => res.send(error))
 
+      res.cookie('auth', token)
       res.status(200).json({ auth: true, token: token })
     } else {
       res.status(400).json({ error: 'Password Incorrect' })
