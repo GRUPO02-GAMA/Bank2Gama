@@ -1,0 +1,63 @@
+.deposit-container {
+    width: 100%;
+    padding: 40px;
+}
+
+.deposit-container label {
+    width: 100%;
+    display: block;
+    font-size: 24px;
+}
+
+.deposit-container .deposit-group {
+}
+
+.deposit-group .form-group {
+    width: 50vw;
+}
+
+.deposit-group .container-balance {
+
+}
+
+.deposit-container .deposit-balance {
+    font-size: 24px;
+}
+
+.deposit-container .btn {
+    font-weight: bold;
+    transition: 0.2s background-color;
+}
+
+.deposit-container .btn:hover {
+    background-color: #f55c17;
+    transition: 0.2s background-color;
+}
+
+.deposit-container #cancel {
+    color: #212529;
+    background-color: #ffffff;
+}
+
+.deposit-container #cancel:hover {
+    background-color: #212529;
+    color: #ffffff;
+
+}
+
+/* ================ Responsividade ================= */
+
+@media (max-width: 1000px) {
+    .deposit-container .deposit-group {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .deposit-group .form-control {
+        width: 40vw;
+    }
+
+    .deposit-container input {
+        width: 100%;
+    }
+}

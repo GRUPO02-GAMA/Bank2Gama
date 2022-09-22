@@ -48,13 +48,13 @@
         </li>
         <li class="nav-item">
           <h2 class="h2">
-            <a class="nav-link" href="#">Conta Digital</a>
+            <a class="nav-link" href="#">Meu perfil</a>
           </h2>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
-            Perfil
+            Profile
           </a>
           <div class="dropdown-menu profile" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item dropdown-item-link" href="#">
@@ -77,7 +77,7 @@
       </ul>
     </nav>
 
-    <main class="main">
+    <main class="main" id="profile-main">
       <div class="side-bar_menu navbar-collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="list-group">
           <li class="list-group-item">
@@ -118,41 +118,57 @@
           </li>
         </ul>
       </div>
-      <div class="jumbotron-wrapper">
-        <div class="group-text">
-          <p class="hello">Olá, pessoa usuária!</p>
-          <span class="last-hour">Último acesso: 2021-11-04 11:06:46</span>
+      <div class="profile-container">
+        <div class="profile-group">
+            <form class="form-profile">
+                <div class="form-group">
+                  <label for="inputName">Nome</label>
+                  <input type="text" class="form-control input-field" id="inputName" placeholder="Digite seu nome">
+                </div>
+                <div class="form-group">
+                  <label for="inputLastname">Sobrenome</label>
+                  <input type="text" class="form-control input-field" id="inputLastname" placeholder="Digite seu sobrenome">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">E-mail</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Digite seu email">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Senha</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Informe sua senha">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="button" class="btn btn-primary" id="cancel">Cancelar</button>
+              </form>
         </div>
-
-        <div class="jumbotron">
-          <span class="account">Sua conta</span>
-          <div class="container-text">
-            <div class="balance-wrapper">
-              <span id="balance">Saldo:</span>
-              <span id="hide">Ocultar</span>
-            </div>
-            <span class="money"><strong>R$ 2000,00</strong></span>
-            <hr class="my-4">
-          </div>
-          <div class="transactions-buttons">
-            <button type="button" class="btn btn-primary btn-lg">Extrato</button>
-            <button type="button" class="btn btn-primary btn-lg">Transferência</button>
-            <button type="button" class="btn btn-primary btn-lg">Depósito</button>
-          </div>
-        </div>
-        <button type="button" class="btn btn-primary btn-lg" id="myTransactions">
-          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M6 17.5C6 15.6144 6 14.6716 6.58579 14.0858C7.17157 13.5 8.11438 13.5 10 13.5H26C27.8856 13.5 28.8284 13.5 29.4142 14.0858C30 14.6716 30 15.6144 30 17.5V25.5C30 28.3284 30 29.7426 29.1213 30.6213C28.2426 31.5 26.8284 31.5 24 31.5H12C9.17157 31.5 7.75736 31.5 6.87868 30.6213C6 29.7426 6 28.3284 6 25.5V17.5Z" stroke="#F25F1D" stroke-width="1.2"/>
-            <path d="M24 12V10.5C24 9.57099 24 9.10649 23.9384 8.71783C23.5996 6.57837 21.9216 4.90042 19.7822 4.56156C19.3935 4.5 18.929 4.5 18 4.5V4.5C17.071 4.5 16.6065 4.5 16.2178 4.56156C14.0784 4.90042 12.4004 6.57837 12.0616 8.71783C12 9.10649 12 9.57099 12 10.5V12" stroke="#F25F1D" stroke-width="1.2" stroke-linecap="round"/>
-            <ellipse cx="18" cy="22.5" rx="3" ry="3" fill="#F25F1D"/>
-            </svg>
-          <span>
-            Minhas Transaçãoes
-          </span>
-        </button>
       </div>
-      <div class="logo-bank">
-        <img src="images/logo.png" alt="">
+      <div class="profile-wrapper">
+        <ul class="list-group">
+            <li class="list-group-item">
+                <div class="profile-fields">
+                    <span class="field-name">Nome completo:</span>
+                    <span class="field-value">Jayneanderson Santos</span>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="profile-fields">
+                    <span class="field-name">E-mail:</span>
+                    <span class="field-value">jayneanderson@gmail.com</span>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="profile-fields">
+                    <span class="field-name">CPF:</span>
+                    <span class="field-value">00011122234</span>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="profile-fields">
+                    <span class="field-name">Data de nascimento:</span>
+                    <span class="field-value">1997-08-03</span>
+                </div>
+            </li>
+          </ul>
       </div>
     </main>
   </div>
