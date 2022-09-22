@@ -10,6 +10,7 @@ const operationsController = require("../controllers/operations.controller")
 
 routes.get("/client", authenticate, clientsController.findAll)
 routes.post("/client", authenticate, clientsController.create)
+routes.put("/client/:id", authenticate, clientsController.update)
 routes.post("/login", loginController.login)
 routes.post("/logout", authenticate, loginController.logout)
 routes.get("/account", authenticate, accountsController.findAll)
