@@ -3082,6 +3082,86 @@ figure figcaption {
   height: 500px;
 }
 
+/* ================ Estilizando o perfil================= */
+
+#profile-main {
+  display: flex;
+}
+
+#profile-main .side-bar_menu {
+  width: 320px;
+  flex-basis: 0;
+  flex-grow: 0;
+}
+
+.profile-container {
+  width: 40%;
+  padding: 40px;
+}
+
+.profile-group {
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  padding: 0 16px;
+  padding-bottom: 16px;
+  border-radius: 8px;
+}
+
+.form-profile label {
+  font-size: 24px;
+}
+
+.form-profile .btn {
+  font-weight: bold;
+  transition: 0.2s background-color;
+}
+
+.form-profile .btn:hover {
+  background-color: #f55c17;
+  transition: 0.2s background-color;
+}
+
+.form-profile #cancel {
+  color: #212529;
+  background-color: #ffffff;
+}
+
+.form-profile #cancel:hover {
+  background-color: #212529;
+  color: #ffffff;
+
+}
+
+.profile-wrapper {
+  width: 35%;
+  padding: 40px;
+
+}
+
+.profile-wrapper .list-group {
+  width: 100%;
+  background-color: #ffffff;
+}
+
+.profile-wrapper .list-group .list-group-item {
+  background-color: #ffffff;
+  border-radius: 8px;
+  border-left: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.profile-wrapper span {
+  font-size: 24px;
+}
+
+.profile-fields {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.field-name {
+  color: #212529;
+  margin-right: 5px;
+}
 
 /* ================ Responsividade ================= */
 
