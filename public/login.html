@@ -19,25 +19,21 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css" />
     <link rel="stylesheet" href="css/owl.theme.default.min.css" />
     <link rel="stylesheet" href="css/owl.theme.default.min.css" />
-
     <link rel="stylesheet" href="css/jquery.fancybox.min.css" />
-
     <link rel="stylesheet" href="css/bootstrap-datepicker.css" />
-
     <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css" />
-
     <link rel="stylesheet" href="css/aos.css" />
-
     <link rel="stylesheet" href="css/style.css" />
   </head>
 
   <body>
+    
     <div id="groupLogin">
       <div class="login-image-container">
         <img src="images/login.jpg" alt="" class="rounded float-start" id="imgLogin" />
       </div>
-      <div id="login">
-        <form id="formCreate" action="/api/login" method="post" class="">
+      <div id="_login">
+        <form id="formCreate" action="#" method="post" class="" @submit.prevent="login()">
           <div class="row form-group">
             <h2 class="section-title mb-3" data-aos="fade-up" data-aos-delay="">
               Faça seu login
@@ -52,6 +48,8 @@
               class="form-control input-login"
               placeholder="Insira seu e-mail"
               required
+              autocomplete="username"
+              v-model="form.email"
             />
           </div>
 
@@ -64,6 +62,8 @@
               class="form-control input-login"
               placeholder="Insira sua senha"
               required
+              autocomplete="current-password"
+              v-model="form.password"
             />
           </div>
 
@@ -84,7 +84,6 @@
         </form>
       </div>
     </div>
-
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/jquery-ui.js"></script>
     <script src="js/popper.min.js"></script>
@@ -98,5 +97,9 @@
     <script src="js/isotope.pkgd.min.js"></script>
 
     <script src="js/main.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.7.10/vue.min.js" integrity="sha512-H8u5mlZT1FD7MRlnUsODppkKyk+VEiCmncej8yZW1k/wUT90OQon0F9DSf/2Qh+7L/5UHd+xTLrMszjHEZc2BA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js" integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/vuejs/login.js"></script>
   </body>
 </html>
