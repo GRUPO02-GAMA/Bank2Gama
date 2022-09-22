@@ -1,0 +1,10 @@
+.transfer-group {
+    width: 70%;
+    justify-content: space-between;
+    line-height: 1;
+}
+
+.account-number {
+    color: #f25f1d;
+    font-size: 32px;
+}
