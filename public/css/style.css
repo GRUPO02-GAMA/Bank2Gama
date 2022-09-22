@@ -2130,13 +2130,22 @@ body:after {
 
 .section-title {
   color: #f25f1d;
-  font-size: 40px;
+/*   font-size: 40px; */
+  font-size: clamp(24px, 40px, 40px);
   font-weight: 900;
 }
 @media (max-width: 991.98px) {
   .section-title {
     font-size: 30px;
   }
+}
+
+.input-login-group {
+  flex-direction: column;
+}
+
+.input-login {
+  width: 80%;
 }
 
 .position-relative {
@@ -2742,16 +2751,50 @@ figure figcaption {
   display: flex;
 }
 
+.login-image-container {
+  width: 50%;
+  height: 100%;
+  position: relative;
+  object-fit: cover;
+}
+
+.login-image-container:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(255deg, #f25f1d, black);
+  z-index: 1;
+  mix-blend-mode: screen;
+}
+
+
+#imgLogin {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+
+
 #login {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding-top: 15%;
   height: 100%;
   background-color: #fff;
-  transform: translate(10%, -5%);
 }
 
 #formCreate {
+  width: 70%;
   border-radius: 8px;
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .32); 
+  background-color: #ffffff;
 }
 
 #entrar {
@@ -3033,4 +3076,38 @@ figure figcaption {
 
 .logo-bank img {
   height: 500px;
+}
+
+
+/* ================ Responsividade ================= */
+
+@media (max-width: 800px) {
+  .login-image-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  #login {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    z-index: 1;
+  }
+
+  #formCreate {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+  }
+
+  .input-login {
+    width: 100%;
+  }
+
 }
