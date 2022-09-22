@@ -133,30 +133,63 @@
                         <div class="form-group col-md-3">
                             <label for="inputAccountNumber">Nº da conta</label>
                             <input type="number" class="form-control input-value" id="inputAccountNumber"
-                                placeholder="Digite o número da conta">
+                                placeholder="Digite o número da conta" disabled>
                         </div>
                         <div class="form-group col-md-3">
                             <label for="inputName">Nome</label>
-                            <input type="text" class="form-control" id="inputName" placeholder="Digite seu nome">
+                            <input type="text" class="form-control" id="inputName" placeholder="Digite seu nome"
+                                disabled>
                         </div>
                         <div class="form-group col-md-3">
                             <label for="inputEmail4">E-mail</label>
-                            <input type="email" class="form-control" id="inputEmail4" placeholder="Digite seu e-mail">
+                            <input type="email" class="form-control" id="inputEmail4" placeholder="Digite seu e-mail"
+                                disabled>
                         </div>
                     </div>
                     <div>
-                        <span class="deposit-balance">Saldo disponível: <strong>19,200.00</strong></span>
+                        <span class="deposit-balance" id="depositResume">Resumo do depósito</span>
                     </div>
-                    <hr class="my-3">
-                    <div class="form-row" class="container-balance">
-                        <div class="form-group col-md-">
-                            <label for="inputAmmount">Valor do depósito:</label>
-                            <input type="number" class="form-control input-value" id="inputAmmount"
-                            placeholder="Informe o valor">
+                    <div class="form-row resume">
+                        <div class="container-resume">
+                            <div class="resume-group">
+                                <div class="resume-wrapper">
+                                    <div class="resume-text-group">
+                                        <span>Valor anterior: </span>
+                                        <span class="resume-value">19,200.00</span>
+                                    </div>
+                                </div>
+                                <div class="resume-text-group" id="resumeValue">
+                                    <span>Valor do depósito: </span>
+                                    <span>5,000.00</span>
+                                </div>
+                                <div class="resume-text-group">
+                                    <span>Valor total: </span>
+                                    <span>24,200.00</span>
+                                </div>
+                            </div>
+                            <div class="resume-success-group">
+                                <div class="resume-success">
+                                    <svg width="62" height="62" viewBox="0 0 62 62" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="31" cy="31" r="29.25" stroke="#F25F1D" stroke-width="2" />
+                                    <path d="M18 31L27.75 40.75L44 21.25" stroke="#F25F1D" stroke-width="2" />
+                                </svg>
+                                <span class="success">Feito!</span>
+                            </div>
+
+                            </div>
                         </div>
+                        <div class="resume-ok-group">
+                            <button type="button" class="btn btn-primary resume-ok" >
+                                <svg width="62" height="62" viewBox="0 0 62 62" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="31" cy="31" r="29.25" stroke="#F25F1D" stroke-width="2" />
+                                <path d="M18 31L27.75 40.75L44 21.25" stroke="#F25F1D" stroke-width="2" />
+                            </svg>
+                            <span>OK</span>
+                        </button>
                     </div>
-                    <button type="submit" class="btn btn-primary">Enviar</button>
-                    <button type="button" class="btn btn-primary" id="cancel">Cancelar</button>
+                    </div>
                 </form>
             </div>
         </main>

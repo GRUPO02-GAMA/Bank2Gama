@@ -28,10 +28,11 @@
 
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/deposit.css" />
+    <link rel="stylesheet" href="css/transfer.css" />
 
     <link rel="stylesheet" href="/css/transacoes.css" />
 
-    <title>Transacoes</title>
+    <title>Transferência</title>
 </head>
 
 <body>
@@ -49,7 +50,7 @@
                 </li>
                 <li class="nav-item">
                     <h2 class="h2">
-                        Depósito
+                        Transferência
                     </h2>
                 </li>
                 <li class="nav-item dropdown">
@@ -102,46 +103,43 @@
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="#" class="list-group-item-link">
+                        <a href="deposit.html" class="list-group-item-link">
                             <img src="images/icon-deposit.svg" alt="">
                             <span class="list-group-item-text">Depósito</span>
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="" class="list-group-item-link">
-                            <img src="images/icon-withdraw.svg" alt="">
-                            <span class="list-group-item-text">Sacar</span>
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="" class="list-group-item-link">
+                        <a href="#" class="list-group-item-link">
                             <img src="images/icon-transfer.svg" alt="">
                             <span class="list-group-item-text">Transferência</span>
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="" class="list-group-item-link">
-                            <img src="images/icon-loan.svg" alt="" id="iconLoan">
-                            <span class="list-group-item-text">Empréstimo</span>
                         </a>
                     </li>
                 </ul>
             </div>
             <div class="deposit-container">
                 <form>
-                    <div class="form-row deposit-group">
-                        <div class="form-group col-md-3">
-                            <label for="inputAccountNumber">Nº da conta</label>
-                            <input type="number" class="form-control input-value" id="inputAccountNumber"
-                                placeholder="Digite o número da conta">
+                    <div>
+                        <h2>Pix</h2>
+                        <hr class="my-3">
+                    </div>
+                    <div class="form-row transfer-group">
+                        <div class="form-group col-md-2">
+                            <label for="accountNumber">Nº da conta:</label>
+                            <span class="account-number" id="accountNumber">6231415</span>
                         </div>
                         <div class="form-group col-md-3">
-                            <label for="inputName">Nome</label>
-                            <input type="text" class="form-control" id="inputName" placeholder="Digite seu nome">
+                            <label for="keyType">Tipo de chave</label>
+                            <select class="form-control form-control-lg" id="keyType">
+                                <option value="">Selecione</option>
+                                <option value="cpfOrCnpj">CPF ou CNPJ</option>
+                                <option value="email">E-mail</option>
+                                <option value="phoneNumber">Número do celular</option>
+                                <option value="randomKey">Chave aleatória</option>
+                              </select>
                         </div>
-                        <div class="form-group col-md-3">
-                            <label for="inputEmail4">E-mail</label>
-                            <input type="email" class="form-control" id="inputEmail4" placeholder="Digite seu e-mail">
+                        <div class="form-group col-md-4">
+                            <label for="inputPix">Chave Pix</label>
+                            <input type="text" class="form-control" id="inputPix" placeholder="Digite a chave">
                         </div>
                     </div>
                     <div>
@@ -150,7 +148,7 @@
                     <hr class="my-3">
                     <div class="form-row" class="container-balance">
                         <div class="form-group col-md-">
-                            <label for="inputAmmount">Valor do depósito:</label>
+                            <label for="inputAmmount">Valor da transferência:</label>
                             <input type="number" class="form-control input-value" id="inputAmmount"
                             placeholder="Informe o valor">
                         </div>

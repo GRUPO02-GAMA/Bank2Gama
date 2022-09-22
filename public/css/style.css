@@ -2862,8 +2862,9 @@ figure figcaption {
   align-items: center;
 }
 
-.h2 {
+#navbar-container .h2 {
   font-size: 24px;
+  color: #ffffff;
 }
 
 .navbar-nav .nav-link {
