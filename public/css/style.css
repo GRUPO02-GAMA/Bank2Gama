@@ -2781,7 +2781,7 @@ figure figcaption {
 }
 
 
-#login {
+#_login {
   width: 50%;
   display: flex;
   flex-direction: column;
@@ -3036,6 +3036,11 @@ figure figcaption {
   color: #f25f1d;
 }
 
+.transactions-buttons .btn-primary.operation-link:hover {
+  color: black !important;
+  cursor: pointer;
+}
+
 #myTransactions {
   width: 280px;
   height: 50px;
@@ -3175,7 +3180,7 @@ figure figcaption {
     left: 0;
   }
 
-  #login {
+  #_login {
     width: 100%;
     align-items: center;
     justify-content: center;
