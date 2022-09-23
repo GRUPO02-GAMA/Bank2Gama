@@ -13,6 +13,11 @@ const app = new Vue({
   el: "#profileMain",
   data() {
     return {
+      result: {
+        balance: 0,
+        newBalance: 0,
+        value: 0,
+      },
       standingVal: 0,
       depositCompleted: false,
       deposit: {
@@ -38,6 +43,8 @@ const app = new Vue({
         .post("/api/operations", this.deposit)
         .then((res) => {
           this.depositCompleted = true
+          this.result.balance = res.data.balance
+          this.result.newBalance = res.data.newBalance
         })
         .catch((err) => {
           console.error(err)
