@@ -31,10 +31,12 @@ const app = new Vue({
       axios
         .post("/api/operations", this.transfer)
         .then((res) => {
-            this.transferCompleted = true
-            // balance: account.balance,
-            // newBalance: newBalance,
-            // value: req.body.value
+          this.transferCompleted = true
+          this.result.balance = res.data.balance
+          this.result.newBalance = res.data.newBalance
+          // balance: account.balance,
+          // newBalance: newBalance,
+          // value: req.body.value
         })
         .catch((err) => {
           console.error(err)
