@@ -6,7 +6,8 @@ const { Sequelize } = require('sequelize')
 const Op = Sequelize.Op
 
 exports.find = async function find(req, res) {
-  const client = decode(req.cookies.auth)
+  const user = decode(req.cookies.auth)
+  const client = await Client.findOne({ where: { email: user.email } })
 
   Operation.findAll({
     where: {
