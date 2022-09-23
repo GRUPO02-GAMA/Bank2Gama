@@ -30,6 +30,12 @@ exports.create = async function create(req, res) {
       res.status(400).json({ error: err })
     }
 
+    try {
+      await createAccount(newClient)
+    } catch (err) {
+      res.status(400).json({ error: err })
+    }
+
     res.status(201).json({ msg: 'Conta criada com sucesso' })
   } catch (err) {
     res.status(400).json({ error: err })
@@ -46,6 +52,19 @@ async function createCredentials(newClient) {
     await Credential.create({
       email: email,
       hash: hash
+    })
+  } catch (error) {
+    res.status(400).json({ error: err })
+  }
+}
+
+async function createAccount(newClient) {
+  try {
+    await Account.create({
+      id: null,
+      clientId: newClient.id,
+      type: 'corrente',
+      balance: 0
     })
   } catch (error) {
     res.status(400).json({ error: err })
