@@ -1,9 +1,9 @@
 const Client = require('../models/clients.model')
 const Credential = require('../models/credentials.model')
 const Account = require('../models/accounts.model')
+const moment = require('moment')
 
 const bcrypt = require('bcrypt')
-const jwt = require('jsonwebtoken')
 require('dotenv').config()
 
 exports.findAll = async function findAll(req, res) {
@@ -116,7 +116,16 @@ exports.detail = async function detail(req, res) {
 
 exports.lastLogin = async function lastLogin(req, res) {
   const client = await Client.findOne({ where: { id: req.params.id } })
+  const results = []
   Credential.findAll({ where: { email: client.email } })
-    .then(result => res.json(result))
+    .then(result => {
+      result.forEach(client => {
+        const data = {
+          lastLogin: moment(client.lastLogin).format('YYYY-MM-DD HH:mm:ss')
+        }
+        results.push(data)
+      })
+      res.json(results)
+    })
     .catch(error => console.log(error))
 }
