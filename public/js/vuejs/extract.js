@@ -6,7 +6,23 @@ var app = new Vue({
       transactions: [],
     }
   },
-  computed: {},
+  computed: {
+    total: function () {
+      const ttl = this.transactions.reduce(function (prev, item) {
+        return (sum += item.price)
+      }, 0)
+    },
+  },
+  filters: {
+    toCurrency: function (val) {
+      if (typeof val != "number") return val
+      let fmt = new Intl.NumberFormat("pt-BR", {
+        style: "currency",
+        currency: "BRL",
+      })
+      return fmt.format(val)
+    },
+  },
   created: function () {
     this.loadTransactions()
   },
