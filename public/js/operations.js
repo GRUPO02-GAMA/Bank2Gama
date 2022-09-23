@@ -1,4 +1,14 @@
-const id = 1
+const auth = Cookies.get('auth')
+
+let id
+
+fetch('/api/user').then(response => response.json()).then(res => {
+  id = res[0].id
+})
+
+if (!id) {
+  id = 1
+}
 
 fetch(`/api/client/account/${id}`)
   .then(response => response.json())
