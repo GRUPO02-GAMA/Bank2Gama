@@ -54,16 +54,16 @@ exports.create = async function create(req, res) {
           where: { id: accountLogado.id }
         }
       )
-        .then(() => {
-          const response = {
-            balance: accountIn.balance,
-            newBalance: newBalance,
-            value: req.body.value
-          }
-
-          res.status(201).json(response)
-        })
+        .then()
         .catch(error => res.send(error))
+
+      const response = {
+        balance: accountIn.balance,
+        newBalance: newBalance,
+        value: req.body.value
+      }
+
+      res.status(201).json(response)
     } catch (err) {
       res.status(400).json({ error: err })
     }
