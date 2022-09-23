@@ -8,7 +8,26 @@ const app = new Vue({
   },
   data: () => {
     return {
+      form: {
+        name: "Victor",
+        lastname: "Tame",
+        birth: "",
+        legalId: "64132277020",
+        email: "vmtame@gmail.com",
+      },
       message: "hello",
     }
+  },
+  methods: {
+    register() {
+      axios
+        .post("/api/client", this.form)
+        .then((res) => {
+          window.location.href = "/login.html"
+        })
+        .catch((err) => {
+          console.log(err)
+        })
+    },
   },
 })

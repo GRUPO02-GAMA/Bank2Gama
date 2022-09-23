@@ -474,7 +474,7 @@
           </div>
           <div class="row">
             <div class="col-md-12 mb-5">
-              <form action="/api/client" method="post" class="p-5 bg-white">
+              <form action="/api/client" method="post" class="p-5 bg-white" @submit.prevent="register()">
                 <h2 id="dados" class="h4 text-black mb-5">Insira seus dados</h2>
 
                 <div class="row form-group">
@@ -485,6 +485,7 @@
                     >
                     <input
                       type="text"
+                      v-model="form.name"
                       id="fname"
                       name="name"
                       class="form-control"
@@ -498,6 +499,7 @@
                     <input
                       type="text"
                       id="lname"
+                      v-model="form.lastname"
                       name="lastname"
                       class="form-control"
                       placeholder="Insira seu sobrenome"
@@ -513,6 +515,7 @@
                     <input
                       type="email"
                       id="email"
+                      v-model="form.email"
                       name="email"
                       class="form-control"
                       placeholder="Insira seu melhor e-mail (example@example.com)"
@@ -530,6 +533,7 @@
                     <input
                       type="text"
                       id="cpf"
+                      v-model="form.legalId"
                       name="legalId"
                       class="form-control"
                       maxlength="11"
@@ -546,6 +550,7 @@
                     >
                     <input
                       type="date"
+                      v-model="form.birth"
                       min="1922-01-01"
                       max="2000-01-01"
                       id="birth"
