@@ -16,7 +16,7 @@ const app = new Vue({
       depositCompleted: false,
       deposit: {
         type: "credit",
-        value: 435,
+        value: 0,
       },
     }
   },

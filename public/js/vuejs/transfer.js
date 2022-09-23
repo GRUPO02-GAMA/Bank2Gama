@@ -21,8 +21,8 @@ const app = new Vue({
       },
       transfer: {
         type: "debit",
-        value: 435,
-        dest: "45312349011",
+        value: 0,
+        dest: "",
       },
     }
   },
