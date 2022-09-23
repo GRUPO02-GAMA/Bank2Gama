@@ -2,6 +2,8 @@ const { decode } = require('jsonwebtoken')
 const Account = require('../models/accounts.model')
 const Operation = require('../models/operations.model')
 const Client = require('../models/clients.model')
+const { Sequelize } = require('sequelize')
+const Op = Sequelize.Op
 
 exports.find = async function find(req, res) {
   const client = decode(req.cookies.auth)
@@ -16,77 +18,131 @@ exports.find = async function find(req, res) {
 }
 
 exports.create = async function create(req, res) {
-  const client = decode(req.cookies.auth)
-
-  let destination
+  const userLogado = decode(req.cookies.auth)
+  const clientLogado = await Client.findOne({
+    where: { email: userLogado.email }
+  })
 
   if (req.body.type === 'credit') {
-    destination = await Client.findOne({
+    const accountLogado = await Account.findOne({
       where: {
-        email: req.body.dest,
-        $or: [
-          {
-            legalId: req.body.dest
-          }
-        ]
+        clientId: clientLogado.id
       }
     })
-  }
 
-  let account
+    const operationCredito = {
+      id: null,
+      clientId: clientLogado.id,
+      accountId: accountLogado.id,
+      type: 'credit',
+      value: req.body.value
+    }
 
-  if (destination) {
-    account = await Account.findOne({
-      where: {
-        clientId: destination.id
-      }
-    })
-  } else {
-    account = await Account.findOne({
-      where: {
-        clientId: client.id
-      }
-    })
-  }
+    try {
+      const newOperationCredito = await Operation.create(operationCredito)
 
-  const operation = {
-    id: null,
-    clientId: client.id,
-    accountId: account.id,
-    type: req.body.type,
-    value: req.body.value
-  }
-
-  try {
-    const newOperation = await Operation.create(operation)
-
-    let newBalance
-
-    if (req.body.type === 'credit') {
-      newBalance = Number(account.balance + newOperation.value)
-    } else if (req.body.type === 'debit') {
-      newBalance = Number(account.balance - newOperation.value)
+      const newBalanceCredito = Number(
+        accountLogado.balance + newOperationCredito.value
+      )
 
       await Account.update(
         {
-          balance: newBalance
+          balance: newBalanceCredito
         },
         {
-          where: { id: account.id }
+          where: { id: accountLogado.id }
+        }
+      )
+        .then(() => {
+          const response = {
+            balance: accountIn.balance,
+            newBalance: newBalance,
+            value: req.body.value
+          }
+
+          res.status(201).json(response)
+        })
+        .catch(error => res.send(error))
+    } catch (err) {
+      res.status(400).json({ error: err })
+    }
+  } else if (req.body.type === 'debit') {
+    const clientDestination = await Client.findOne({
+      where: {
+        [Op.or]: [{ email: req.body.dest }, { legalId: req.body.dest }]
+      }
+    })
+
+    const accountDestination = await Account.findOne({
+      where: {
+        clientId: clientDestination.id
+      }
+    })
+
+    const accountLogado = await Account.findOne({
+      where: {
+        clientId: clientLogado.id
+      }
+    })
+
+    const operationCredito = {
+      id: null,
+      clientId: clientDestination.id,
+      accountId: accountDestination.id,
+      type: 'credit',
+      value: req.body.value
+    }
+
+    const operationDebito = {
+      id: null,
+      clientId: clientLogado.id,
+      accountId: accountLogado.id,
+      type: 'debit',
+      value: req.body.value
+    }
+
+    try {
+      const newOperationCredito = await Operation.create(operationCredito)
+      const newOperationDebito = await Operation.create(operationDebito)
+
+      const newBalanceCredito = Number(
+        accountDestination.balance + newOperationCredito.value
+      )
+      const newBalanceDebito = Number(
+        accountLogado.balance - newOperationDebito.value
+      )
+
+      await Account.update(
+        {
+          balance: newBalanceCredito
+        },
+        {
+          where: { id: accountDestination.id }
         }
       )
         .then()
         .catch(error => res.send(error))
-    }
 
-    const response = {
-      balance: account.balance,
-      newBalance: newBalance,
-      value: req.body.value
-    }
+      await Account.update(
+        {
+          balance: newBalanceDebito
+        },
+        {
+          where: { id: accountLogado.id }
+        }
+      )
+        .then()
+        .catch(error => res.send(error))
 
-    res.status(201).json(response)
-  } catch (err) {
-    res.status(400).json({ error: err })
+      const response = {
+        balance: accountLogado.balance,
+        newBalance: newBalanceDebito,
+        value: req.body.value
+      }
+
+      res.status(201).json(response)
+    } catch (err) {
+      res.status(400).json({ error: err })
+    }
   }
 }

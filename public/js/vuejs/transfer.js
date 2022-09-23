@@ -32,9 +32,9 @@ const app = new Vue({
         .post("/api/operations", this.transfer)
         .then((res) => {
             this.transferCompleted = true
-            balance: account.balance,
-            newBalance: newBalance,
-            value: req.body.value
+            // balance: account.balance,
+            // newBalance: newBalance,
+            // value: req.body.value
         })
         .catch((err) => {
           console.error(err)
