@@ -18,5 +18,6 @@ routes.post("/logout", authenticate, loginController.logout)
 routes.get("/account", authenticate, accountsController.findAll)
 routes.get("/user", authenticate, usersController.user)
 routes.get("/operations", authenticate, operationsController.find)
+routes.post("/operations", authenticate, operationsController.create)
 
 module.exports = routes
