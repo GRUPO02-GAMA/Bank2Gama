@@ -38,7 +38,7 @@
       </div>
     </div>
 
-    <div class="site-wrap">
+    <div id="_index" class="site-wrap">
       <div class="site-mobile-menu site-navbar-target">
         <div class="site-mobile-menu-header">
           <div class="site-mobile-menu-close mt-3">
@@ -92,11 +92,14 @@
                     >
                   </li>
                   <li>
-                    <a href="/login.html">
+                    <a v-if="loggedIn" href="#">
+                      <button id="btnLogin" class="btn btn-primary btn-md">
+                        Sair
+                      </button></a>
+                      <a v-else href="/login.html">
                       <button id="btnLogin" class="btn btn-primary btn-md">
                         Entrar
-                      </button></a
-                    >
+                      </button></a>
                   </li>
                 </ul>
               </nav>
@@ -604,6 +607,11 @@
     <script src="js/isotope.pkgd.min.js"></script>
 
     <script src="js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.7.10/vue.min.js" integrity="sha512-H8u5mlZT1FD7MRlnUsODppkKyk+VEiCmncej8yZW1k/wUT90OQon0F9DSf/2Qh+7L/5UHd+xTLrMszjHEZc2BA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js" integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.1/js.cookie.min.js" integrity="sha512-wT7uPE7tOP6w4o28u1DN775jYjHQApdBnib5Pho4RB0Pgd9y7eSkAV1BTqQydupYDB9GBhTcQQzyNMPMV3cAew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/vuejs/index.js"></script>
+    <script src="/js/logout.js"></script>
 
     <script>
       function mascara(i) {
