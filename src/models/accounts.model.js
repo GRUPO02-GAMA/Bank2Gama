@@ -1,4 +1,5 @@
 const { Sequelize } = require('sequelize')
+const Client = require('../models/clients.model')
 const database = require('../database/db')
 
 const Account = database.define('accounts', {

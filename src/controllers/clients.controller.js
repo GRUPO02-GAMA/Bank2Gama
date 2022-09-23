@@ -1,6 +1,10 @@
 const Client = require('../models/clients.model')
 const Credential = require('../models/credentials.model')
+const Account = require('../models/accounts.model')
+const moment = require('moment')
+
 const bcrypt = require('bcrypt')
+require('dotenv').config()
 
 exports.findAll = async function findAll(req, res) {
   Client.findAll().then(result => res.json(result))
@@ -66,8 +70,18 @@ exports.update = async function update(req, res) {
       )
 
       if (body.password) {
+        const salt = await bcrypt.genSalt(10)
+        const hash = await bcrypt.hash(body.password, salt)
+
         try {
-          await updateCredentials(updateClient, body.password)
+          await Credential.update(
+            {
+              hash: hash
+            },
+            {
+              where: { email: client.email }
+            }
+          )
         } catch (err) {
           res.status(400).json({ error: err })
         }
@@ -80,20 +94,30 @@ exports.update = async function update(req, res) {
   }
 }
 
-async function updateCredentials(client, password) {
-  const salt = await bcrypt.genSalt(10)
-  const hash = await bcrypt.hash(password, salt)
-
-  try {
-    await Credential.update(
+exports.detail = async function detail(req, res) {
+  Client.findAll({
+    include: [
       {
-        hash: hash
-      },
-      {
-        where: { email: client.email }
+        model: Account
       }
-    )
-  } catch (error) {
-    res.status(400).json({ error: err })
-  }
+    ]
+  })
+    .then(result => res.json(result))
+    .catch(error => console.log(error))
+}
+
+exports.lastLogin = async function lastLogin(req, res) {
+  const client = await Client.findOne({ where: { id: req.params.id } })
+  const results = []
+  Credential.findAll({ where: { email: client.email } })
+    .then(result => {
+      result.forEach(client => {
+        const data = {
+          lastLogin: moment(client.lastLogin).format('YYYY-MM-DD HH:mm:ss')
+        }
+        results.push(data)
+      })
+      res.json(results)
+    })
+    .catch(error => console.log(error))
 }
