@@ -108,7 +108,7 @@
       </div>
       <div class="profile-container">
         <div class="profile-group">
-            <form class="form-profile">
+            <form class="form-profile" @submit.prevent="profile()">
                 <div class="form-group">
                   <label for="inputName">Nome</label>
                   <input type="text" v-model="form.name" class="form-control input-field" id="inputName" placeholder="Digite seu nome">
@@ -119,7 +119,7 @@
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Senha</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Informe sua senha">
+                  <input type="password" v-model="password" class="form-control" id="exampleInputPassword1" placeholder="Informe sua senha">
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
                 <button type="button" class="btn btn-primary" id="cancel">Cancelar</button>
@@ -161,6 +161,7 @@
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.7.10/vue.min.js" integrity="sha512-H8u5mlZT1FD7MRlnUsODppkKyk+VEiCmncej8yZW1k/wUT90OQon0F9DSf/2Qh+7L/5UHd+xTLrMszjHEZc2BA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.10/dist/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js" integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.1/js.cookie.min.js" integrity="sha512-wT7uPE7tOP6w4o28u1DN775jYjHQApdBnib5Pho4RB0Pgd9y7eSkAV1BTqQydupYDB9GBhTcQQzyNMPMV3cAew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="/js/vuejs/profile.js"></script>
 </body>
 
