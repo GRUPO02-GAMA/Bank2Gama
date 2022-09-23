@@ -17,16 +17,21 @@ exports.find = async function find(req, res) {
 
 exports.create = async function create(req, res) {
   const client = decode(req.cookies.auth)
-  const destination = await Client.findOne({
-    where: {
-      email: req.body.dest,
-      $or: [
-        {
-          legalId: req.body.dest
-        }
-      ]
-    }
-  })
+
+  let destination
+
+  if (req.body.type === 'credit') {
+    destination = await Client.findOne({
+      where: {
+        email: req.body.dest,
+        $or: [
+          {
+            legalId: req.body.dest
+          }
+        ]
+      }
+    })
+  }
 
   let account
 
