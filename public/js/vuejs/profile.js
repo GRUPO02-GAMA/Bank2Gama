@@ -22,7 +22,8 @@ var app = new Vue({
   created: function () {
     const auth = Cookies.get("auth")
     if (!auth) {
-      window.location.href = "/"
+      localStorage.setItem("redirectTo", "profile.html")
+      window.location.href = "/login.html"
     }
     this.getUser()
   },

@@ -14,7 +14,7 @@ body {
   font-weight: 400;
   font-size: 1rem;
   font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
+    Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
 }
 
 ::-moz-selection {
@@ -2953,7 +2953,7 @@ figure figcaption {
   width: 100%;
   display: grid;
   grid-template-columns: 320px auto auto;
-  height: 800px;
+  height: 92vh;
 }
 
 .text-group-container {
@@ -3205,4 +3205,8 @@ figure figcaption {
     width: 100%;
   }
 
+}
+
+.link-destaque {
+  background-color: rgba(0, 0, 0, 0.5);
 }

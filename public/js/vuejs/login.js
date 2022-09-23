@@ -22,7 +22,13 @@ var app = new Vue({
           if (res.data.auth == true) {
             this.form.email = ""
             this.form.password = ""
-            window.location.href = "operations.html"
+            const redirectTo = localStorage.getItem("redirectTo")
+            if (typeof redirectTo === "string" && redirectTo.length > 0) {
+              localStorage.removeItem("redirectTo")
+              window.location.href = redirectTo
+            } else {
+              window.location.href = "operations.html"
+            }
           }
         })
         .catch((err) => {
