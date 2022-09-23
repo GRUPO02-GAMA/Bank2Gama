@@ -108,8 +108,10 @@
       </div>
       <div class="jumbotron-wrapper">
         <div class="group-text">
-          <p class="hello">Olá, pessoa usuária!</p>
-          <span class="last-hour">Último acesso: 2021-11-04 11:06:46</span>
+          <span class="hello">Olá, </span>
+          <span class="hello" id="hello-name"></span>
+          <span class="last-hour">Último acesso:</span>
+          <span class="last-hour" id="last-login"></span>
         </div>
 
         <div class="jumbotron">
@@ -119,7 +121,7 @@
               <span id="balance">Saldo:</span>
               <span id="hide">Ocultar</span>
             </div>
-            <span class="money"><strong>R$ 2000,00</strong></span>
+            <span style="color:black" class="money" id="money"><strong></strong></span>
             <hr class="my-4">
           </div>
           <div class="transactions-buttons">
@@ -134,8 +136,10 @@
       </div>
     </main>
   </div>
-  <script src="js/jquery-3.3.1.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
+  <script src="/js/jquery-3.3.1.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.1/js.cookie.min.js" integrity="sha512-wT7uPE7tOP6w4o28u1DN775jYjHQApdBnib5Pho4RB0Pgd9y7eSkAV1BTqQydupYDB9GBhTcQQzyNMPMV3cAew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/js/operations.js"></script>
 
 </body>
 

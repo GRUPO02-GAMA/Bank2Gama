@@ -1,6 +1,10 @@
 const Client = require('../models/clients.model')
 const Credential = require('../models/credentials.model')
+const Account = require('../models/accounts.model')
+
 const bcrypt = require('bcrypt')
+const jwt = require('jsonwebtoken')
+require('dotenv').config()
 
 exports.findAll = async function findAll(req, res) {
   Client.findAll().then(result => res.json(result))
@@ -96,4 +100,23 @@ async function updateCredentials(client, password) {
   } catch (error) {
     res.status(400).json({ error: err })
   }
+}
+
+exports.detail = async function detail(req, res) {
+  Client.findAll({
+    include: [
+      {
+        model: Account
+      }
+    ]
+  })
+    .then(result => res.json(result))
+    .catch(error => console.log(error))
+}
+
+exports.lastLogin = async function lastLogin(req, res) {
+  const client = await Client.findOne({ where: { id: req.params.id } })
+  Credential.findAll({ where: { email: client.email } })
+    .then(result => res.json(result))
+    .catch(error => console.log(error))
 }
