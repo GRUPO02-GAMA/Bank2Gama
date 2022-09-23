@@ -9,11 +9,11 @@ const app = new Vue({
   data: () => {
     return {
       form: {
-        name: "Victor",
-        lastname: "Tame",
+        name: "",
+        lastname: "",
         birth: "",
-        legalId: "64132277020",
-        email: "vmtame@gmail.com",
+        legalId: "",
+        email: "",
       },
       message: "hello",
     }
