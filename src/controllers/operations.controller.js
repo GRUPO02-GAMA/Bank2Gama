@@ -58,7 +58,7 @@ exports.create = async function create(req, res) {
         .catch(error => res.send(error))
 
       const response = {
-        balance: accountIn.balance,
+        balance: accountLogado.balance,
         newBalance: newBalance,
         value: req.body.value
       }
