@@ -18,7 +18,7 @@ var app = new Vue({
             this.form.password = ""
             // localStorage.clear()
             // localStorage.setItem("token", res.data.token)
-            window.location.href = "profile.html"
+            window.location.href = "operations.html"
           }
         })
         .catch((err) => {

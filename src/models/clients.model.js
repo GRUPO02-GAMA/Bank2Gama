@@ -1,4 +1,5 @@
 const { Sequelize } = require('sequelize')
+const Account = require('../models/accounts.model')
 const database = require('../database/db')
 
 const Client = database.define('clients', {
@@ -50,5 +51,7 @@ const Client = database.define('clients', {
     allowNull: true
   }
 })
+
+Client.hasMany(Account)
 
 module.exports = Client
