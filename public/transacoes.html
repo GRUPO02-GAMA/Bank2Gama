@@ -130,8 +130,8 @@
                                 <tbody>
                                     <tr v-for="(transaction, index) in transactions" :key="index">
                                         <td>{{ frmDate(transaction.createdAt) }}</td>
-                                        <td>{{transaction.type | type}}</td>
-                                        <td class="text-center" :class="{ 'text-danger' : transaction.value < 0 }">{{ transaction.value }}</td>
+                                        <td>{{ transaction.type | type }}</td>
+                                        <td class="text-center" :class="{ 'text-danger' : transaction.type == 'credit' }">{{ transaction.value }}</td>
                                     </tr>
                                     <tr>
                                         <td>&nbsp;</td>
