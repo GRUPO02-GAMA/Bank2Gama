@@ -2,6 +2,7 @@ const Client = require('../models/clients.model')
 const Credential = require('../models/credentials.model')
 const Account = require('../models/accounts.model')
 const moment = require('moment')
+const { decode } = require('jsonwebtoken')
 
 const bcrypt = require('bcrypt')
 require('dotenv').config()
@@ -126,7 +127,8 @@ exports.detail = async function detail(req, res) {
 }
 
 exports.lastLogin = async function lastLogin(req, res) {
-  const client = await Client.findOne({ where: { id: req.params.id } })
+  const user = decode(req.cookies.auth)
+  const client = await Client.findOne({ where: { email: user.email } })
   const results = []
   Credential.findAll({ where: { email: client.email } })
     .then(result => {
