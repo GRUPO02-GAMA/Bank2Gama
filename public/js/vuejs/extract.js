@@ -16,6 +16,12 @@ var app = new Vue({
     },
   },
   filters: {
+    type: function (val) {
+      if (typeof val !== "string") return val
+      if (val === "debit" || val === "debito") return "Transferência"
+      if (val === "credit" || val === "credito") return "Depósito"
+      return val
+    },
     toCurrency: function (val) {
       if (typeof val != "number") return val
       let fmt = new Intl.NumberFormat("pt-BR", {
