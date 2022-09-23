@@ -8,10 +8,11 @@ var app = new Vue({
   },
   computed: {
     total: function () {
-      return 200
-      //   const ttl = this.transactions.reduce(function (prev, item) {
-      //     return (sum += item.price)
-      //   }, 0)
+      let sum = 0
+      for (let i = 0; i < this.transactions.length; i++) {
+        sum += this.transactions[i].value
+      }
+      return sum
     },
   },
   filters: {
@@ -28,6 +29,9 @@ var app = new Vue({
     this.loadTransactions()
   },
   methods: {
+    frmDate(val) {
+      return moment(val).format("DD/MM/YY hh:mm")
+    },
     loadTransactions() {
       axios
         .get("/api/operations")

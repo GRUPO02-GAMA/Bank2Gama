@@ -105,7 +105,7 @@
                 </div>
                 <div class="deposit-container" id="_extract">
                     <h1> Extrato </h1>
-                    <div class="table-responsive-md">
+                    <div class="table-responsive-xs">
                         <table class="table table-striped" id="agenda">
                             <thead>
                                 <tr>
@@ -117,16 +117,16 @@
                                 </tr>
                                 <tbody>
                                     <tr v-for="(transaction, index) in transactions" :key="index">
-                                        <td>{{transaction.createdAt}}</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td :class="{ 'text-danger' : transaction.value < 0 }">{{ transaction.value }}</td>
+                                        <td>{{transaction.id}}</td>
+                                        <td>{{ frmDate(transaction.createdAt) }}</td>
+                                        <td>{{transaction.type}}</td>
+                                        <td class="text-center" :class="{ 'text-danger' : transaction.value < 0 }">{{ transaction.value }}</td>
                                     </tr>
                                     <tr>
                                         <td>&nbsp;</td>
                                         <td>&nbsp;</td>
                                         <td>&nbsp;</td>
-                                        <td :class="{ 'text-danger' : total < 0 }">{{ total | toCurrency }}</td>
+                                        <td class="text-center" :class="{ 'text-danger' : total < 0 }">{{ total | toCurrency }}</td>
                                     </tr>
                                 </tbody>
                             </thead>
@@ -137,6 +137,7 @@
         </div>
         <script src="/js/jquery-3.3.1.min.js"></script>
         <script src="/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment-with-locales.min.js" integrity="sha512-42PE0rd+wZ2hNXftlM78BSehIGzezNeQuzihiBCvUEB3CVxHvsShF86wBWwQORNxNINlBPuq7rG4WWhNiTVHFg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.7.10/vue.min.js" integrity="sha512-H8u5mlZT1FD7MRlnUsODppkKyk+VEiCmncej8yZW1k/wUT90OQon0F9DSf/2Qh+7L/5UHd+xTLrMszjHEZc2BA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js" integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="js/vuejs/extract.js"></script>

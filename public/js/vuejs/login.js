@@ -10,8 +10,7 @@ var app = new Vue({
   },
   created() {
     const auth = Cookies.get("auth")
-    console.log(auth)
-    if (auth.length !== 0) {
+    if (auth != undefined && auth.length !== 0) {
       window.location.href = "operations.html"
     }
   },

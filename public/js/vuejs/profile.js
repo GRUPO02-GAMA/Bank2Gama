@@ -2,7 +2,7 @@ var app = new Vue({
   el: "#_profile",
   data() {
     return {
-      message: "",
+      message: "adasdf",
       password: "",
       form: {
         name: "",
@@ -49,8 +49,8 @@ var app = new Vue({
         .get("/api/user")
         .then((res) => {
           //   console.log(res.data)
-          this.authUser = res.data
-          this.form = res.data
+          this.authUser = res.data[0]
+          this.form = res.data[0]
           //   console.log(this.user)
         })
         .catch((err) => {
