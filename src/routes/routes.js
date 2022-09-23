@@ -9,7 +9,7 @@ const usersController = require("../controllers/users.controller")
 const operationsController = require("../controllers/operations.controller")
 
 routes.get("/client", authenticate, clientsController.findAll)
-routes.post("/client", authenticate, clientsController.create)
+routes.post("/client", clientsController.create)
 routes.put("/client/:id", authenticate, clientsController.update)
 routes.get("/client/account/:id", authenticate, clientsController.detail)
 routes.get("/client/login/:id", authenticate, clientsController.lastLogin)
