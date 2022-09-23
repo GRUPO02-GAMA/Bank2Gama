@@ -70,8 +70,18 @@ exports.update = async function update(req, res) {
       )
 
       if (body.password) {
+        const salt = await bcrypt.genSalt(10)
+        const hash = await bcrypt.hash(body.password, salt)
+
         try {
-          await updateCredentials(updateClient, body.password)
+          await Credential.update(
+            {
+              hash: hash
+            },
+            {
+              where: { email: client.email }
+            }
+          )
         } catch (err) {
           res.status(400).json({ error: err })
         }
@@ -81,24 +91,6 @@ exports.update = async function update(req, res) {
     } catch (err) {
       res.status(400).json({ error: err })
     }
-  }
-}
-
-async function updateCredentials(client, password) {
-  const salt = await bcrypt.genSalt(10)
-  const hash = await bcrypt.hash(password, salt)
-
-  try {
-    await Credential.update(
-      {
-        hash: hash
-      },
-      {
-        where: { email: client.email }
-      }
-    )
-  } catch (error) {
-    res.status(400).json({ error: err })
   }
 }
 
