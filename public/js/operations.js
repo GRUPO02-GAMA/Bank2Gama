@@ -13,7 +13,7 @@ if (!id) {
 fetch(`/api/client/account/${id}`)
   .then(response => response.json())
   .then(res => {
-    document.getElementById('hello-name').innerText = res[0].name
+    document.getElementById('hello-name').innerText = res[0].name + '!'
     document.getElementById('money').innerText = res[0].accounts[0].balance
   })
 
