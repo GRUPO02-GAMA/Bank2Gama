@@ -13,6 +13,7 @@ const app = new Vue({
   el: "#profileMain",
   data() {
     return {
+      standingVal: 0,
       depositCompleted: false,
       deposit: {
         type: "credit",
@@ -20,7 +21,18 @@ const app = new Vue({
       },
     }
   },
+  created() {
+    this.getStandingValue()
+  },
   methods: {
+    getStandingValue() {
+      axios.get(`/api/user`).then((res) => {
+        const user = res.data[0]
+        axios.get(`/api/client/account/${user.id}`).then((res) => {
+          this.standingVal = res.data[0].accounts[0].balance
+        })
+      })
+    },
     doDeposit() {
       axios
         .post("/api/operations", this.deposit)
