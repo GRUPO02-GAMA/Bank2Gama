@@ -74,7 +74,7 @@
 
                             <span>Meu perfil</span>
                         </a>
-                        <a class="dropdown-item dropdown-item-link" href="index.html">
+                        <a class="dropdown-item dropdown-item-link" href="#" onclick="logout()">
                             <svg class="icon-profile" width="16" height="16" viewBox="0 0 16 16" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -121,7 +121,56 @@
                 </ul>
             </div>
             <div class="deposit-container">
-                <form>
+                <form v-if="transferCompleted">
+                    <div class="resume-transfer">
+                        <span class="deposit-balance" id="depositResume">Resumo do transferência</span>
+                        <span id="accountTo">Conta do recebedor: <strong>10140715</strong></span>
+                    </div>
+                    <div class="form-row resume">
+                        <div class="container-resume">
+                            <div class="resume-group">
+                                <div class="resume-wrapper">
+                                    <div class="resume-text-group">
+                                        <span>Valor anterior: </span>
+                                        <span class="resume-value">19,200.00</span>
+                                    </div>
+                                </div>
+                                <div class="resume-text-group" id="resumeValue">
+                                    <span>Valor de transferência: </span>
+                                    <span>{{ transfer.value }}</span>
+                                </div>
+                                <div class="resume-text-group">
+                                    <span>Valor total: </span>
+                                    <span>14,200.00</span>
+                                </div>
+                            </div>
+                            <div class="resume-success-group">
+                                <div class="resume-success">
+                                    <svg width="62" height="62" viewBox="0 0 62 62" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="31" cy="31" r="29.25" stroke="#F25F1D" stroke-width="2" />
+                                        <path d="M18 31L27.75 40.75L44 21.25" stroke="#F25F1D" stroke-width="2" />
+                                    </svg>
+                                    <span class="success">Feito!</span>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="resume-ok-group">
+                            <div class="resume-ok-button">
+                                <a href="operations.html" class="btn btn-primary resume-ok">
+                                    <svg width="62" height="62" viewBox="0 0 62 62" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="31" cy="31" r="29.25" stroke="#F25F1D" stroke-width="2" />
+                                    <path d="M18 31L27.75 40.75L44 21.25" stroke="#F25F1D" stroke-width="2" />
+                                </svg>
+                                <span>OK</span>
+                            </a>
+                        </div>
+                        </div>
+                    </div>
+                </form>
+                <form v-else>
                     <div>
                         <h2>Pix</h2>
                         <hr class="my-3">
@@ -143,7 +192,7 @@
                         </div>
                         <div class="form-group col-md-4">
                             <label for="inputPix">Chave Pix</label>
-                            <input type="text" class="form-control" id="inputPix" placeholder="Digite a chave">
+                            <input type="text" v-model="transfer.dest" class="form-control" id="inputPix" placeholder="Digite a chave">
                         </div>
                     </div>
                     <div>
@@ -153,11 +202,11 @@
                     <div class="form-row" class="container-balance">
                         <div class="form-group col-md-">
                             <label for="inputAmmount">Valor da transferência:</label>
-                            <input type="number" class="form-control input-value" id="inputAmmount"
+                            <input type="number" v-model="transfer.value" class="form-control input-value" id="inputAmmount"
                             placeholder="Informe o valor">
                         </div>
                     </div>
-                    <a href="transfer-resume.html" class="btn btn-primary" id="transferLink">Transferir</a>
+                    <a href="#" class="btn btn-primary" id="transferLink" @click.prevent="doTransfer()">Transferir</a>
                     <a href="operations.html" class="btn btn-primary" id="transferCancel">Cancelar</a>
                 </form>
             </div>
@@ -165,7 +214,10 @@
     </div>
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.7.10/vue.min.js" integrity="sha512-H8u5mlZT1FD7MRlnUsODppkKyk+VEiCmncej8yZW1k/wUT90OQon0F9DSf/2Qh+7L/5UHd+xTLrMszjHEZc2BA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js" integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/vuejs/transfer.js"></script>
+    <script src="/js/logout.js"></script>
 </body>
 
 </html>
