@@ -120,7 +120,10 @@ exports.detail = async function detail(req, res) {
       {
         model: Account
       }
-    ]
+    ],
+    where: {
+      id: req.params.id
+    }
   })
     .then(result => res.json(result))
     .catch(error => console.log(error))
