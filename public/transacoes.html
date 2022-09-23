@@ -122,7 +122,6 @@
                         <table class="table table-striped" id="agenda">
                             <thead>
                                 <tr>
-                                    <th scope="col">#</th>
                                     <th scope="col">Data de criação</th>
                                     <th scope="col">Transações</th>
                                     <th scope="col" class="text-center">Valor</th>
@@ -130,13 +129,11 @@
                                 </tr>
                                 <tbody>
                                     <tr v-for="(transaction, index) in transactions" :key="index">
-                                        <td>{{transaction.id}}</td>
                                         <td>{{ frmDate(transaction.createdAt) }}</td>
-                                        <td>{{transaction.type}}</td>
+                                        <td>{{transaction.type | type}}</td>
                                         <td class="text-center" :class="{ 'text-danger' : transaction.value < 0 }">{{ transaction.value }}</td>
                                     </tr>
                                     <tr>
-                                        <td>&nbsp;</td>
                                         <td>&nbsp;</td>
                                         <td>&nbsp;</td>
                                         <td class="text-center" :class="{ 'text-danger' : total < 0 }">{{ total | toCurrency }}</td>
