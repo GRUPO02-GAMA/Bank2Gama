@@ -3090,11 +3090,11 @@ figure figcaption {
 
 /* ================ Estilizando o perfil================= */
 
-#profile-main {
+#profileMain {
   display: flex;
 }
 
-#profile-main .side-bar_menu {
+#profileMain .side-bar_menu {
   width: 320px;
   flex-basis: 0;
   flex-grow: 0;

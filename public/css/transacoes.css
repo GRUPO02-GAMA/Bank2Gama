@@ -1,13 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans&display=swap');
-
-body {
-    overflow-x: hidden;
-    font-family: 'Alegreya Sans', sans-serif;
-    font-size: 40px;
-}
-
-/* Toggle Styles */
-
 #viewport {
     padding-left: 250px;
     -webkit-transition: all 0.5s ease;
@@ -77,4 +67,29 @@ body {
 
 #sidebar .nav a i {
     margin-right: 16px;
+}
+
+/* ================ Estilizando a tabela ================= */
+
+#transactionsContainer .side-bar_menu {
+    width: 320px;
+    flex-basis: 0;
+    flex-grow: 0;
+  }
+  
+
+#transactionsContainer {
+    display: flex;
+}
+
+.transactions {
+    width: 100%;
+    flex-direction: column;
+    padding: 40px;
+    border: 1px solid red;
+    margin: 0;
+}
+
+.transactions-col {
+    padding: 0;
 }
