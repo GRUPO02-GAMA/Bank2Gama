@@ -2956,6 +2956,11 @@ figure figcaption {
   height: 800px;
 }
 
+.text-group-container {
+  width: 51%;
+  display: flex;
+}
+
 .group-text {
   width: 570px;
   display: flex;
@@ -2981,7 +2986,7 @@ figure figcaption {
 }
 
 .account {
-  color: rgba(33, 37, 41, 0.8);
+  color: gray;
   font-size: 24px;
 }
 
