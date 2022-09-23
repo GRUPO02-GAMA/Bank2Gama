@@ -122,11 +122,11 @@
                                         <td></td>
                                         <td :class="{ 'text-danger' : transaction.value < 0 }">{{ transaction.value }}</td>
                                     </tr>
-                                    <tr v-for="(transaction, index) in transactions" :key="index">
+                                    <tr>
                                         <td>&nbsp;</td>
                                         <td>&nbsp;</td>
                                         <td>&nbsp;</td>
-                                        <td :class="{ 'text-danger' : transaction.value < 0 }">{{ sum | toCurrency }}</td>
+                                        <td :class="{ 'text-danger' : total < 0 }">{{ total | toCurrency }}</td>
                                     </tr>
                                 </tbody>
                             </thead>

@@ -8,9 +8,10 @@ var app = new Vue({
   },
   computed: {
     total: function () {
-      const ttl = this.transactions.reduce(function (prev, item) {
-        return (sum += item.price)
-      }, 0)
+      return 200
+      //   const ttl = this.transactions.reduce(function (prev, item) {
+      //     return (sum += item.price)
+      //   }, 0)
     },
   },
   filters: {
