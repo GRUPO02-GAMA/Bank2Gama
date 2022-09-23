@@ -85,14 +85,19 @@
                     </ul>
                   </li>
                   <li>
-                    <a href="#contact-section">
+                    <a v-if="loggedIn" href="/operations.html">
+                      <button id="abraConta" class="btn btn-primary btn-md">
+                        Minha conta
+                      </button>
+                    </a>
+                    <a v-else href="#contact-section">
                       <button id="abraConta" class="btn btn-primary btn-md">
                         Abra sua conta
-                      </button></a
-                    >
+                      </button>
+                    </a>
                   </li>
                   <li>
-                    <a v-if="loggedIn" href="#">
+                    <a v-if="loggedIn" href="#" onclick="logout()">
                       <button id="btnLogin" class="btn btn-primary btn-md">
                         Sair
                       </button></a>
