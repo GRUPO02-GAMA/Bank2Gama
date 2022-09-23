@@ -14,8 +14,13 @@ const app = new Vue({
   data() {
     return {
       transferCompleted: false,
+      result: {
+        balance: 0,
+        newBalance: 0,
+        value: 0,
+      },
       transfer: {
-        type: "credit",
+        type: "debit",
         value: 435,
         dest: "45312349011",
       },
@@ -26,7 +31,10 @@ const app = new Vue({
       axios
         .post("/api/operations", this.transfer)
         .then((res) => {
-          this.transferCompleted = true
+            this.transferCompleted = true
+            balance: account.balance,
+            newBalance: newBalance,
+            value: req.body.value
         })
         .catch((err) => {
           console.error(err)
