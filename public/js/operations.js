@@ -10,11 +10,18 @@ if (!id) {
   id = 1
 }
 
+function formatValue(value) {
+  return value.toLocaleString('pt-BR',
+  {style: 'currency', currency: 'BRL'}
+);
+}
+
 fetch(`/api/client/account/${id}`)
   .then(response => response.json())
   .then(res => {
+    const balance = formatValue(res[0].accounts[0].balance)
     document.getElementById('hello-name').innerText = res[0].name + '!'
-    document.getElementById('money').innerText = res[0].accounts[0].balance
+    document.getElementById('money').innerText = balance
   })
 
 function formatDate(date) {

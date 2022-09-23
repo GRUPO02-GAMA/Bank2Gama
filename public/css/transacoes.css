@@ -75,8 +75,8 @@
     width: 320px;
     flex-basis: 0;
     flex-grow: 0;
-  }
-  
+}
+
 
 #transactionsContainer {
     display: flex;
@@ -92,4 +92,9 @@
 
 .transactions-col {
     padding: 0;
+}
+
+#agenda {
+    margin-left: 50px;
+    width: 90%;
 }

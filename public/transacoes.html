@@ -1,26 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="fonts/icomoon/style.css" />
-    <link rel="stylesheet" href="css/jquery-ui.css" />
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/owl.carousel.min.css" />
-    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
-    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
-    <link rel="stylesheet" href="css/jquery.fancybox.min.css" />
-    <link rel="stylesheet" href="css/bootstrap-datepicker.css" />
-    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css" />
-    <link rel="stylesheet" href="css/aos.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="/css/transacoes.css" />
-    <title>Transações</title>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="fonts/icomoon/style.css" />
+
+  <link rel="stylesheet" href="css/jquery-ui.css" />
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/owl.carousel.min.css" />
+  <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+  <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+
+  <link rel="stylesheet" href="css/jquery.fancybox.min.css" />
+
+  <link rel="stylesheet" href="css/bootstrap-datepicker.css" />
+
+  <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css" />
+
+  <link rel="stylesheet" href="css/aos.css" />
+
+  <link rel="stylesheet" href="css/style.css" />
+
+  <link rel="stylesheet" href="css/transacoes.css" />
+
+  <title>Transações</title>
 </head>
     <body>  
         <div class="myContainer">
@@ -37,7 +47,7 @@
                     </li>
                     <li class="nav-item">
                         <h2 class="h2">
-                            Depósito
+                            Extrato
                         </h2>
                     </li>
                     <li class="nav-item dropdown">
@@ -46,7 +56,7 @@
                             Perfil
                         </a>
                         <div class="dropdown-menu profile" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item dropdown-item-link" href="#">
+                            <a class="dropdown-item dropdown-item-link" href="/profile.html">
                                 <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -57,7 +67,7 @@
 
                                 <span>Meu perfil</span>
                             </a>
-                            <a class="dropdown-item dropdown-item-link" href="#">
+                            <a class="dropdown-item dropdown-item-link" href="#" onclick="logout()">
                                 <svg class="icon-profile" width="16" height="16" viewBox="0 0 16 16" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -104,7 +114,6 @@
                     </ul>
                 </div>
                 <div class="deposit-container" id="_extract">
-                    <h1> Extrato </h1>
                     <div class="table-responsive-xs">
                         <table class="table table-striped" id="agenda">
                             <thead>
@@ -141,5 +150,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.7.10/vue.min.js" integrity="sha512-H8u5mlZT1FD7MRlnUsODppkKyk+VEiCmncej8yZW1k/wUT90OQon0F9DSf/2Qh+7L/5UHd+xTLrMszjHEZc2BA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js" integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="js/vuejs/extract.js"></script>
+        <script src="/js/logout.js"></script>
     </body>
 </html>
