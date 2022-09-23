@@ -3,6 +3,7 @@ var app = new Vue({
   data() {
     return {
       message: "",
+      password: "",
       form: {
         name: "",
         lastname: "",
@@ -19,11 +20,31 @@ var app = new Vue({
     },
   },
   created: function () {
+    const auth = Cookies.get("auth")
+    if (!auth) {
+      window.location.href = "/"
+    }
     this.getUser()
   },
   methods: {
+    profile() {
+      if (
+        typeof this.password === "string" &&
+        this.password.trim().length !== 0
+      ) {
+        this.form = { ...this.form, ...{ password: this.password } }
+      } else {
+        delete this.form.password
+      }
+
+      axios
+        .put(`/api/client/${this.form.id}`, this.form)
+        .then((res) => {
+          console.log(res.data)
+        })
+        .catch((err) => console.error(err))
+    },
     getUser() {
-      console.log("mounted@")
       axios
         .get("/api/user")
         .then((res) => {

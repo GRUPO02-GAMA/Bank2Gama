@@ -8,6 +8,13 @@ var app = new Vue({
       },
     }
   },
+  created() {
+    const auth = Cookies.get("auth")
+    console.log(auth)
+    if (auth.length !== 0) {
+      window.location.href = "operations.html"
+    }
+  },
   methods: {
     login() {
       axios
@@ -16,8 +23,6 @@ var app = new Vue({
           if (res.data.auth == true) {
             this.form.email = ""
             this.form.password = ""
-            // localStorage.clear()
-            // localStorage.setItem("token", res.data.token)
             window.location.href = "operations.html"
           }
         })
